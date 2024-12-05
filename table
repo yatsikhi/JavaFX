@@ -1,0 +1,36 @@
+package org.example;
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+
+public class table {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame();
+        frame.setTitle("Table Example");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        // создаем двумерный массив данных для таблицы
+        Object[][] data = {
+                {"rare", 33},
+                {"skin", 333},
+                {"luck", 0.4}
+        };
+
+        // создаем массив названий столбцов
+        String[] columnNames = {"Name", "numbe"};
+
+        // создаем новую таблицу и устанавливаем данные и названия столбцов
+        JTable table = new JTable(data, columnNames);
+
+        // добавляем таблицу на панель прокрутки
+        JScrollPane scrollPane = new JScrollPane(table);
+
+        // добавляем панель прокрутки на фрейм
+        frame.add(scrollPane);
+
+        // устанавливаем размеры фрейма и делаем его видимым
+        frame.setSize(300, 200);
+        frame.setVisible(true);
+    }
+
+}
